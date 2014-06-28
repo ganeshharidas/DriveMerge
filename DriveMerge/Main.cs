@@ -17,6 +17,12 @@ namespace DriveMerge
 {
     class CMain
     {
+        //
+        // We should use single threaded apartment to be able to initialize ActiveX controls
+        // (which is required by Browser class). 
+        // GHTODO: Find out if it is enough to set to this on just the CWebBrowser class.
+        //
+        [STAThread]
         static void Main (string[] args)
         {
             CConfig.Initialize();
